@@ -16,16 +16,20 @@ function Header() {
 
     let section = document.createElement(div);
     let date = document.createElement(span);
-    let header = document.createElement(h1);
+    let titleheader = document.createElement(h1);
     let temp = document.createElement(span);
 
     section.appendChild(date);
-    section.appendChild(header);
+    section.appendChild(titleheader);
     section.appendChild(temp);
 
     section.classList.add("header");
     date.classList.add("date");
     temp.classList.add("temp");
+
+    date.textContent = 'SMARCH 28, 2019'
+    titleheader.textContent = 'Lambda Times'
+    temp.textContent = '98°'
 
     var x = document.getElementsByClassName("header-container");
     x.appendChild(section)
