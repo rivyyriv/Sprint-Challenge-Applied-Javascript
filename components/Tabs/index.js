@@ -7,3 +7,28 @@
 //
 //  Each tab should look like this:
 //    <div class="tab">topic here</div>
+
+
+function addTabs(newArray){
+
+    const subjects = document.querySelector('.topics')
+
+    newArray.forEach( topic => {
+
+        const tabs = document.createElement('div')
+        tabs.classList.add('tab')
+        tabs.textContent = topic
+        subjects.append(tabs)
+        // console.log(topic)
+    })
+}
+
+axios.get('https://lambda-times-backend.herokuapp.com/topics')
+
+    .then( response => {
+        console.log(response)
+        addTabs(response.data.topics)
+    })
+    .catch( error => {
+        console.log('Error with initial get request to /topics')
+    })
